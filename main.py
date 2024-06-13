@@ -11,13 +11,11 @@ dt = 0
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
 while running:
-    # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # fill the screen with a color to wipe away anything from last frame
+    # fill the screen with image of map then render all entieis? 
     screen.fill("black")
 
     pygame.draw.circle(screen, "red", player_pos, 40)
@@ -32,8 +30,7 @@ while running:
     if keys[pygame.K_d]:
         player_pos.x += 300 * dt
 
+
     pygame.display.flip()
-
     dt = clock.tick(60) / 1000
-
 pygame.quit()
