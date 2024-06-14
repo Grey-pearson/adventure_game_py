@@ -62,6 +62,6 @@ while run:
                 win.fill((0,0,0))
                 show(height)
                 pg.time.delay(50)
-                pg.display.udpate()
+                pg.display.update()
                 
 pg.quit()
