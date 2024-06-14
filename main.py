@@ -30,3 +30,22 @@ while run:
         if event.type == pg.QUIT:
             run=False
     if keys[pg.K_SPACE]:
+        execute = True
+    if execute == False:
+        win.fill((0,0,0))
+        show(height)
+        pg.display.update()
+    
+    else:
+        for i in range(len(height)-1):
+            for j in range(len(height)-1):
+                if height[j] > height[j+1]:
+                    t = height[j]
+                    height[j] = height[j+1]
+                    height[j+1] = t
+                win.fill((0,0,0))
+                show(height)
+                pg.time.delay(50)
+                pg.dispaly.udpate()
+                
+pg.quit()
