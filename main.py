@@ -8,14 +8,15 @@ import random
 #     SIZE = W, H
 
 pg.init()
-win = pg.display.set_mode((500, 400))
+win = pg.display.set_mode((565, 200))
 pg.display.set_caption("visual sorter")
-x = 40
-y = 40
+pg.display.flip()  
+x = 0
+y = 0
 
-width = 40
+width = 25
 # come up with a different way to create random stats, using random ig, 
-height = [10,20,30,40,50,60,70,80,90,100,110,120,130,140]
+height = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,180,190,200]
 # height = [ 20, 10, 30,140, 80, 70, 90,110,100,130,150, 50, 60,40,120,160]
 
 # whats this do?
@@ -51,5 +52,5 @@ while run:
                 show(height)
                 pg.time.delay(50)
                 pg.display.update()
-pg.display.flip()       
+     
 pg.quit()
