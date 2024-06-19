@@ -1,10 +1,14 @@
-import pygame as pg
-import random
-# file = "2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png"
+import pygame, sys
+from random import randrange
+from pygame.locals import *
+from settings import *
 
-# class Game:
-#     W = 160
-#     H = 160
-#     SIZE = W, H
+pygame.init()
+fps = pygame.time.Clock()
 
--
+pygame.display.set_icon(ICON)
+surfObj = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(TITLE)
+
+class Map:
+    
