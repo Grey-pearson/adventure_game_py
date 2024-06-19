@@ -4,12 +4,6 @@ from os import path
 
 from settings import *
 
-pg.init()
-fps = pg.time.Clock()
-
-pg.display.set_icon(ICON)
-surfObj = pg.display.set_mode((WIDTH, HEIGHT))
-pg.display.set_caption(TITLE)
 
 class Map:
     def __init__(self, filename):
@@ -23,3 +17,25 @@ class Map:
 
         self.width = n_horiz_tiles*TILESIZE
         self.height = n_vert_tiles*TILESIZE
+
+class Game:
+    def __init__(self):
+        pg.init()
+
+        self.clock = pg.time.Clock()
+        pg.key.set_repeat(500, 10)
+        pg.display.set_icon(ICON)
+        pg.display.set_caption(TITLE)
+        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+
+        self.load()
+    
+    def load(self):
+        game_dir = path.dirname(__file__)
+        self.map = Map(path.join(game_dir, 'map.txt'))
+
+    def new_instance(self):
+        self.all_sprites = pg.sprite.Group()
+        self.wall = pg.sprite.Group()
+
+        
