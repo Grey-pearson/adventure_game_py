@@ -1,14 +1,15 @@
-import pygame, sys
-from random import randrange
-from pygame.locals import *
+import pygame as pg
+import sys
+from os import path
+
 from settings import *
 
-pygame.init()
-fps = pygame.time.Clock()
+pg.init()
+fps = pg.time.Clock()
 
-pygame.display.set_icon(ICON)
-surfObj = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption(TITLE)
+pg.display.set_icon(ICON)
+surfObj = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption(TITLE)
 
 class Map:
     def __init__(self, filename):
