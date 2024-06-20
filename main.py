@@ -38,4 +38,30 @@ class Game:
         self.all_sprites = pg.sprite.Group()
         self.wall = pg.sprite.Group()
 
+        ## not a big fan of this aproch to adding player or walls
+        ## id prefer a map and then add the player on top of that
+        # for row, tiles in enumerate(self.map.data):
+        #     for col, tile in enumerate(tiles):
+        #         if tile == '*':
+        #             wall(self, col, row)
+        #         elif tile == 'p':
+        #             self.player = Player(self, col, row)
+
+    def run(self):
+        # game loop
+        self.playing = True
+        while self.playing:
+            self.dt = self.clock.tick(FPS)/1000
+            self.events()
+            self.update()
+            self.draw()
+        
+    def quit(self):
+        pg.quit()
+        sys.exit()
+    
+    def update(self):
+        self.all_sprites.update()
+    
+    def events(self):
         
