@@ -1,5 +1,4 @@
 TITLE = "Adventure Game"
-ICON = "2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png"
 
 WIDTH = 1280
 HEIGHT = 720
