@@ -65,3 +65,26 @@ class Game:
     
     def events(self):
         pass
+
+    def draw_grid(self):
+        for x in range(0, WIDTH, TILESIZE):
+            pg.draw.line(self.screen, BLACK, (x,0), (x,HEIGHT))
+        
+        for y in range(0, HEIGHT, TILESIZE):
+            pg.draw.line(self.screen, BLACK, (0,y), (WIDTH, y))
+
+    def draw(self):
+        self.screen.fill(TAN)
+        self.draw_grid()
+        self.all_sprites.draw(self.screen)
+
+        # flip display after drawing
+        pg.display.flip()
+
+
+if __name__ == "__main__":
+    g = Game()
+
+    while True:
+        g.new_instance()
+        g.run()
