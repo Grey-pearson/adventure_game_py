@@ -3,6 +3,7 @@ import sys
 from os import path
 
 from settings import *
+ICON = pg.surface("2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png")
 
 
 class Map:
@@ -24,7 +25,7 @@ class Game:
 
         self.clock = pg.time.Clock()
         pg.key.set_repeat(500, 10)
-        pg.display.set_icon(ICON)
+        # pg.display.set_icon(icon)
         pg.display.set_caption(TITLE)
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
 
