@@ -3,7 +3,7 @@ import sys
 from os import path
 
 from settings import *
-ICON = pg.surface("2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png")
+
 
 
 class Map:
@@ -23,11 +23,16 @@ class Game:
     def __init__(self):
         pg.init()
 
+        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        pg.display.set_caption(TITLE)
+
+        ICON = pg.image.load("2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png")
+        pg.Surface.convert_alpha(ICON)
+        print(ICON)
+        pg.display.set_icon(ICON)
+
         self.clock = pg.time.Clock()
         pg.key.set_repeat(500, 10)
-        # pg.display.set_icon(icon)
-        pg.display.set_caption(TITLE)
-        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
 
         self.load()
     
@@ -65,7 +70,9 @@ class Game:
         self.all_sprites.update()
     
     def events(self):
-        pass
+        for e in pg.event.get():
+            if e.type == pg.QUIT:
+                self.quit()
 
     def draw_grid(self):
         for x in range(0, WIDTH, TILESIZE):
