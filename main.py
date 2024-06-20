@@ -64,4 +64,4 @@ class Game:
         self.all_sprites.update()
     
     def events(self):
-        
+        pass
